@@ -1,7 +1,7 @@
 {
-  "name": "lp-pwa-module-boilerplate",
-  "version": "1.0.0",
-  "description": "Boilerplate for creating a module for Geins PWA strorefront",
+  "name": "@geins/ralph-module-cms-json-container",
+  "version": "1.1.0",
+  "description": "CMS Module for Geins CMS to handle JSON widgets with ease",
   "author": {
     "name": "arvidsson-geins"
   },
@@ -14,6 +14,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nuxt test/fixture",
+    "publish": "npm publish --access public",
     "test": "jest",
     "test:unit": "jest --testRegex \"/test/unit/(.+)\\.test\\.js$\"",
     "test:system": "jest --testRegex \"/test/system/(.+)\\.test\\.js$\"",
@@ -32,7 +33,5 @@
       "lib/**/*.{js,jsx}"
     ]
   },
-  "dependencies": {
-    "consola": "^2.3.2"
-  }
+  "dependencies": {}
 }
