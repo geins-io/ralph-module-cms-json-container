@@ -3,7 +3,7 @@
 </template>
 <script>
 /* 
-  (Description of component) 
+  Container component for widgets that are configured via JSON widget in Geins CMS.
 */
 export default {
   name: 'GeinsWidgetJsonContainer',
@@ -25,10 +25,8 @@ export default {
       }
       return '';
     },
+    // Get the widget data from the configuration object
     widgetData() {
-      /*if (this.widgetType === 'CaWidgetStreamify'|| this.widgetType === 'GeinsWidgetStreamify') {
-        return this.confObject.data;
-      }*/
       return this.confObject.data ?? {};
     },
     confObject() {
@@ -39,9 +37,7 @@ export default {
     }
   },
   watch: {},
-  mounted() {
-    console.log('GeinsWidgetJsonContainer mounted');
-  },
+  mounted() {},
   methods: {}
 };
 </script>
