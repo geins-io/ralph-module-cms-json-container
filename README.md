@@ -84,12 +84,10 @@ The properties of the component are one to one with the [Streamify Floating Play
 Add a `JSON Widget` to your page in the [Geins CMS](https://docs.geins.io/docs/launchpads/web/content). Add the following JSON to your widget. Replace `YOUR-RENDER-WIDGET-NAME` with the component you wish to render. The component must be registered in your storefront, this is done automatically for Geins Ralph modules.
 
 ```json
-// nuxt.config.js
 
 {
   "renderWidget": "YOUR-RENDER-WIDGET-NAME",
   "data": {
-    // data object is passed to the component
   }
 }
 ```
