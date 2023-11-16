@@ -5,94 +5,75 @@
 [![Start Geins Free Trial][geins-tiral-img]][geins-tiral-url] [![Geins Docs][geins-docs-img]][geins-docs-url]
 
 
-# JSON Container Module for Geins CMS for PWA Storefront Ralph
+# Geins CMS module for Ralph Storefront
 
-This module enables you to add your own components and Geins modules from Geins CMS. 
+This module is a helping tool to render your widgets, when you're using the Geins CMS to create your own widgets. 
 
 ## Pre-requisites
 
 - Geins Account and PWA Storefront Ralph. [Get a free trial here](https://www.geins.io)
-- Ralph UI 19.0.0 or higher
-
-
-## Description
-
-Add this module to your storefront and you can add your own components and Geins modules from Geins CMS from the Merchant Center.
+- Ralph UI 20.0.0 or higher
 
 ## Installation
 
 ### 1. Install the module
 
 ```bash
-npm i @geins/ralph-module-cms-json-container
+npm i @geins/ralph-module-cms
 ```
 
-### 2. Add the module to your Geins PWA Storefront Ralph
+### 2. Add the module to your Geins Ralph Storefront
 
-Add the module to your Geins PWA Storefront Ralph by adding the following line to your `nuxt.config.json` file:
+Add the module to your Geins Ralph Storefront by adding the following line to your `nuxt.config.json` file:
 
 ```js
 ...
   modules: [
-      '@geins/ralph-module-cms-json-container'
+      '@geins/ralph-module-cms'
   ]
 ```
 
-### 3. Add the component from the module as the JSON widget type
+### 3. Specify to use the GeinsCreatedWidgets component instead of default
 
-Set the `widgetRenderTypesComponents` in your `nuxt.config.json` file to use the `GeinsWidgetJsonContainer` component for the `JSON` widget type.
+Set the `widgetRenderTypesComponents` in your `nuxt.config.json` file to use the `GeinsCreatedWidgets` component from this module to be used instead of the default for the `JSON` widget type.
+
 ```js
 ...
   publicRuntimeConfig: {
+    ...
       widgetRenderTypesComponents: {
-        JSON: 'GeinsWidgetJsonContainer'
+        JSON: 'GeinsCreatedWidgets'
       },
+    ...
   }
 ...
 ```
 
 ## Module Options
 
-Add extra options to module configuration in `nuxt.config.json` file.
+These extra options can be added to module configuration in `nuxt.config.js` file.
+
 | Parameter | Default | Example |
 |-|-|-|
-| enabled | `true` | Enables the module|
-| debug | `false` | Enables debug info to console |
-
-
-## Usage
-
-Add to desired page of your storefront. Either by cms or as a component. You can add id to the component to show a specific stream. If no id is added the component will show the next upcoming or live stream.
+| enabled | `true` | Enable/Disable the module | 
 
 ## Components
-This module has one job. To render the JSON widget type. The component is called `GeinsWidgetJsonContainer` and renders the component specified in the JSON supplied to the widget.
+This module has one job. To render all of your custom created widgets. The component is called `GeinsCreatedWidgets` and renders the component specified in the JSON supplied to the widget.
 
-### GeinsWidgetJsonContainer
-This component is used to show the streamify player. It is used by the `GeinsWidgetStreamify` component. You can use it directly in your page if you want to add the player directly to your page. If
+### JSON format in the Geins CMS
 
-#### Properties
-
-The properties of the component are one to one with the [Streamify Floating Player API](https://developer.streamify.io/#floating-player-js-introduction). You can add any property to the component and it will be passed to the API.
-
-| Property        | Type    | Default Value | Required | Description                                            |
-| --------------- | ------- | ------------- | -------- | ----------------------------------------------------   |
-| configuration   | Object  | -             | No       | Configuration object to set properties for the widget. |
-
-
-#### JSON format Geins CMS
-
-Add a `JSON Widget` to your page in the [Geins CMS](https://docs.geins.io/docs/launchpads/web/content). Add the following JSON to your widget. Replace `YOUR-RENDER-WIDGET-NAME` with the component you wish to render. The component must be registered in your storefront, this is done automatically for Geins Ralph modules.
+Use the `Create your own` widget function in the [Geins CMS](https://docs.geins.io/docs/launchpads/web/content). For the `GeinsCreatedWidgets` to work correctly, you need to supply the following JSON format:
 
 ```json
-
 {
-  "renderWidget": "YOUR-RENDER-WIDGET-NAME",
-  "data": {
+  "component": "MyWidgetComponent",
+  "configuration": {
+    // Add your configuration here
   }
 }
 ```
 
-
+Read more about how to use the Create your own widget function in the Geins Docs: [Create your own widget](https://docs.geins.io/docs/geins/cms/create-your-own).
 
 [npm]: https://img.shields.io/npm/v/@geins/ralph-module-cms-json-container
 [npm-url]: https://www.npmjs.com/package/@geins/ralph-module-cms-json-container

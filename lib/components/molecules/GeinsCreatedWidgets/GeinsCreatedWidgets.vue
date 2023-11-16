@@ -1,12 +1,12 @@
 <template>
-  <component :is="widgetType" v-if="widgetType" :configuration="widgetData" />
+  <component :is="widgetComponent" :configuration="widgetConfiguration" />
 </template>
 <script>
 /* 
-  Container component for widgets that are configured via JSON widget in Geins CMS.
+  Container component for widgets that are created via the Create your own widget in Geins CMS.
 */
 export default {
-  name: 'GeinsWidgetJsonContainer',
+  name: 'GeinsCreatedWidgets',
   components: {},
   mixins: [],
   props: {
@@ -19,17 +19,15 @@ export default {
   data: () => ({}),
   computed: {
     // Get the widget type from the configuration object
-    widgetType() {
-      if (this.confObject) {
-        return this.confObject.renderWidget;
-      }
-      return '';
+    widgetComponent() {
+      return this.jsonConfiguration.component || this.jsonConfiguration.renderWidget || 'CaWidgetJson';
     },
     // Get the widget data from the configuration object
-    widgetData() {
-      return this.confObject.data ?? {};
+    widgetConfiguration() {
+      return this.jsonConfiguration.configuration || this.jsonConfiguration.data || {};
     },
-    confObject() {
+    // The configuration object
+    jsonConfiguration() {
       if (this.configuration?.json) {
         return JSON.parse(this.configuration?.json);
       }
