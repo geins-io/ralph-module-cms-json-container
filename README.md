@@ -14,7 +14,7 @@ This module is a helping tool to render your widgets, when you're using the Gein
 - Geins account and Geins PWA Ralph Storefront. [Get a free trial here](https://www.geins.io)
 - Geins Ralph UI 20.0.0 or higher
 
-## Module Options
+## Module options
 
 These extra options can be added to the module configuration in `nuxt.config.js` file.
 
