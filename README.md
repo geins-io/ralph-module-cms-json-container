@@ -94,10 +94,10 @@ Your custom widget component needs a `configuration` prop. This prop will hold t
   ...
   ```
 
-[npm]: https://img.shields.io/npm/v/@geins/ralph-module-cms-json-container
-[npm-url]: https://www.npmjs.com/package/@geins/ralph-module-cms-json-container
-[npm-downloads-per-month]: https://img.shields.io/npm/dm/@geins/ralph-module-cms-json-container.svg
-[npm-trends]: https://npmtrends.com/@geins/ralph-module-cms-json-container
+[npm]: https://img.shields.io/npm/v/@geins/ralph-module-cms
+[npm-url]: https://www.npmjs.com/package/@geins/ralph-module-cms
+[npm-downloads-per-month]: https://img.shields.io/npm/dm/@geins/ralph-module-cms.svg
+[npm-trends]: https://npmtrends.com/@geins/ralph-module-cms
 [geins-docs-url]: https://docs.geins.io
 [geins-docs-img]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/geins-io/resources/master/sheilds/geins-docs-read-v3.json
 [geins-tiral-url]: https://www.geins.io
